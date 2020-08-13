@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:magang_app/screen/homescreen.dart';
+import 'package:magang_app/screen/bottomnavigation.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
         height: MediaQuery.of(context).size.height,
         child: AnimatedSplashScreen(
           splash: "images/ala-big.png",
-          nextScreen: Homescreen(),
+          nextScreen: Bottomnavigation(),
           centered: true,
           splashTransition: SplashTransition.scaleTransition,
           pageTransitionType: PageTransitionType.leftToRight,
