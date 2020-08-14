@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:magang_app/screen/bottomnavigation.dart';
 import 'package:page_transition/page_transition.dart';
 
-class SplashScreen extends StatefulWidget {
-  SplashScreen({Key key}) : super(key: key);
+class SplashScreenMainView extends StatefulWidget {
+  SplashScreenMainView({Key key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  _SplashScreenMainViewState createState() => _SplashScreenMainViewState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenMainViewState extends State<SplashScreenMainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

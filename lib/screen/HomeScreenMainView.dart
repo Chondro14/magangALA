@@ -8,14 +8,14 @@ import 'package:magang_app/widget/listpromo.dart';
 
 import '../data_dummy.dart';
 
-class Homescreen extends StatefulWidget {
-  Homescreen({Key key}) : super(key: key);
+class HomeScreenMainView extends StatefulWidget {
+  HomeScreenMainView({Key key}) : super(key: key);
 
   @override
-  _HomescreenState createState() => _HomescreenState();
+  _HomeScreenMainViewState createState() => _HomeScreenMainViewState();
 }
 
-class _HomescreenState extends State<Homescreen> {
+class _HomeScreenMainViewState extends State<HomeScreenMainView> {
   String location = "Yogyakarta";
   List<Promo> promolist = promo;
   List<Categories> categoryList = category;
@@ -33,7 +33,7 @@ class _HomescreenState extends State<Homescreen> {
         backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(
-            Icons.table_rows_rounded,
+            Icons.menu,
             color: Colors.yellow[700],
           ),
           onPressed: () {},
@@ -50,8 +50,6 @@ class _HomescreenState extends State<Homescreen> {
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 2,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
