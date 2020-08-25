@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:magang_app/screen/BlogScreenMainView.dart';
 import 'package:magang_app/screen/ChatScreenMainView.dart';
 import 'package:magang_app/screen/FeedScreenMainView.dart';
 import 'package:magang_app/screen/HomeScreenMainView.dart';
-import 'package:magang_app/screen/blogscreen.dart';
 
 class BottomFloatAppBar extends StatelessWidget {
   int screenPageIndex = 0;
@@ -16,7 +17,7 @@ class BottomFloatAppBar extends StatelessWidget {
       case 1:
         return ChatScreenMainView();
       case 2:
-        return Blogscreen();
+        return BlogScreenMainView();
       case 3:
         return FeedScreenMainView();
     }
@@ -36,7 +37,7 @@ class BottomFloatAppBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MaterialButton(
-                  minWidth: MediaQuery.of(context).size.width / 4.5,
+                  minWidth: MediaQuery.of(context).size.width / 6,
                   onPressed: () {
                     screenPageIndex = 0;
                     screenPage = ChooseScreen(screenPageIndex);
@@ -62,7 +63,10 @@ class BottomFloatAppBar extends StatelessWidget {
                   ),
                 ),
                 MaterialButton(
-                  minWidth: MediaQuery.of(context).size.width / 4.5,
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width / 6,
                   onPressed: () {
                     screenPageIndex = 1;
                     screenPage = ChooseScreen(screenPageIndex);
@@ -89,11 +93,24 @@ class BottomFloatAppBar extends StatelessWidget {
                 )
               ],
             ),
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: screenPageIndex == 1
+                      ? Colors.yellow[700]
+                      : Colors.black45),
+              child: Icon(Icons.add_shopping_cart),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MaterialButton(
-                  minWidth: MediaQuery.of(context).size.width / 4.5,
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width / 6,
                   onPressed: () {
                     screenPageIndex = 2;
                     screenPage = ChooseScreen(screenPageIndex);
@@ -119,7 +136,10 @@ class BottomFloatAppBar extends StatelessWidget {
                   ),
                 ),
                 MaterialButton(
-                  minWidth: MediaQuery.of(context).size.width / 4.5,
+                  minWidth: MediaQuery
+                      .of(context)
+                      .size
+                      .width / 6,
                   onPressed: () {
                     screenPageIndex = 3;
                     screenPage = ChooseScreen(screenPageIndex);

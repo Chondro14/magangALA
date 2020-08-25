@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:magang_app/model/Promo.dart';
 import 'package:magang_app/model/categories.dart';
 import 'package:magang_app/model/hotdeals.dart';
+import 'package:magang_app/screen/notification_screen_main_view.dart';
 import 'package:magang_app/widget/listcategories.dart';
 import 'package:magang_app/widget/listhotdeals.dart';
 import 'package:magang_app/widget/listpromo.dart';
@@ -44,7 +45,14 @@ class _HomeScreenMainViewState extends State<HomeScreenMainView> {
                 Icons.notifications,
                 color: Colors.yellow[700],
               ),
-              onPressed: null)
+              onPressed: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NotificationScreenMainView()));
+                });
+              })
         ],
       ),
       body: SingleChildScrollView(

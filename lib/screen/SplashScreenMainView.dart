@@ -1,7 +1,6 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:magang_app/screen/bottomnavigation.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:magang_app/screen/BottomNavigationMainView.dart';
 
 class SplashScreenMainView extends StatefulWidget {
   SplashScreenMainView({Key key}) : super(key: key);
@@ -18,16 +17,17 @@ class _SplashScreenMainViewState extends State<SplashScreenMainView> {
         color: Colors.green[300],
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: AnimatedSplashScreen(
-          splash: "images/ala-big.png",
-          nextScreen: Bottomnavigation(),
-          centered: true,
-          splashTransition: SplashTransition.scaleTransition,
-          pageTransitionType: PageTransitionType.leftToRight,
-          duration: 4000,
-          backgroundColor: Colors.green[300],
-        ),
-      ),
+          child: FlareActor(
+            'images/ala.flr',
+            alignment: Alignment.center,
+            animation: 'Untitled',
+            callback: (name) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BottomnavigationMainView()));
+            },
+          )),
     );
   }
 }
